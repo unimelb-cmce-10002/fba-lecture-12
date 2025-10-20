@@ -1,0 +1,96 @@
+Ex 1:
+
+| Data Source                | Example Variables                   | Classification  | Justification                                                                 |
+|---------------------------|--------------------------------------|-----------------|------------------------------------------------------------------------------|
+| LMS activity logs         | Logins, page views, submission timing| Essential        | Direct indicator of engagement; core to predicting academic risk.            |
+| Assessment results        | Grades, late penalties               | Essential        | Strong predictor of performance; already used in academic decisions.         |
+| Demographics              | Age, gender, visa status             | Nice to have     | Useful for model slicing and fairness audits; not used in prediction itself. |
+| Library usage             | Swipe-ins, book loans                | Nice to have     | Could signal engagement, but not all students use the library equally.       |
+| Support service visits    | Counseling, academic support         | Unnecessary      | Highly sensitive; may discourage help-seeking if used in risk models.        |
+| Financial data            | Fees owed, scholarships              | Unnecessary      | Risk of reinforcing disadvantage; not clearly related to academic performance.|
+| Wi-Fi / location tracking | On-campus presence                   | Unnecessary      | Raises surveillance concerns; low signal-to-noise for risk prediction.       |
+| Commute time              | Postcode, travel distance            | Nice to have     | Might influence attendance patterns; could introduce socioeconomic bias.     |
+| Devices / browsers used   | Device type, screen resolution       | Unnecessary      | Weak signal, potential proxy for SES; adds little predictive value.          |
+| Past interventions        | Emails sent, prior flags             | Essential        | Needed to track model effectiveness and avoid redundant alerts.              |
+| Course evaluations        | Student feedback                     | Unnecessary      | Not linked to student performance; likely too noisy for predictive use.      |
+
+
+| Data Source                | Example Variables                   | Classification  | Consent Needed? | Privacy Risk (Reason for Exclusion)                                      |
+|---------------------------|--------------------------------------|-----------------|------------------|-------------------------------------------------------------------------|
+| LMS activity logs         | Logins, page views, submission timing| Essential        | No               | N/A                                                                     |
+| Assessment results        | Grades, late penalties               | Essential        | No               | N/A                                                                     |
+| Demographics              | Age, gender, visa status             | Nice to have     | No               | N/A – used only for slicing, not prediction                            |
+| Library usage             | Swipe-ins, book loans                | Nice to have     | Yes              | May track physical movement or stigmatise low-use students              |
+| Support service visits    | Counseling, academic support         | Unnecessary      | Yes              | Highly sensitive; risks chilling effect on help-seeking behaviour       |
+| Financial data            | Fees owed, scholarships              | Unnecessary      | Yes              | Reflects economic status; risk of reinforcing structural disadvantage   |
+| Wi-Fi / location tracking | On-campus presence                   | Unnecessary      | Yes              | High surveillance risk; low added value to prediction                   |
+| Commute time              | Postcode, travel distance            | Nice to have     | Yes              | May proxy for socioeconomic background; should not drive decisions      |
+| Devices / browsers used   | Device type, screen resolution       | Unnecessary      | No               | Weak signal; may unintentionally encode SES or accessibility constraints|
+| Past interventions        | Emails sent, prior flags             | Essential        | No               | N/A – needed to track model effectiveness and avoid repeated alerts     |
+| Course evaluations        | Student feedback                     | Unnecessary      | Yes              | Highly subjective; not clearly linked to individual performance         |
+
+
+Ex 2:
+
+**1. Define decision**  
+Predict risk of academic failure → affects student support.
+
+**2. Groups**  
+Domestic/international; full-time/part-time; disability status; campus location.
+
+**3. Metric**  
+Error parity (equal false negative rates) may be most important — we don’t want to miss those who need help.
+
+**4. Slice**  
+Performance might be worse for part-time students or those on smaller campuses if underrepresented.
+
+**5. Gaps**  
+Login time could penalise students with jobs. Past drop-out data may reflect unequal support in the past.
+
+**6. Mitigation**  
+Add diversity checks to training data; monitor fairness dashboards; co-design features with support teams.
+
+Ex 3:
+
+Who’s in Charge?
+
+1. Ownership
+The model was likely trained by the Learning Analytics team or external contractors. Responsibility for development rests with the data scientists and engineers who built the system. However, they aren’t accountable for how it’s used.
+
+2. Process
+There should be a documented appeals or review process. Currently, it’s unclear if a student can challenge a flag. Without such a process, the system risks being perceived as arbitrary or untrustworthy.
+
+3. Oversight
+Ongoing monitoring should be the responsibility of a designated team—possibly the Learning Analytics lead or a governance committee. This includes checking for drift, bias, and unintended consequences.
+
+4. Communication
+A clear explanation should be available to both students and staff, e.g., “You were flagged because your engagement dropped by 40% compared to the class average and you’ve missed two assignments.”
+If no one can explain how the model works in practice, that’s a red flag.
+
+5. Trust
+Trust could be improved by:
+
+Making the model explainable to non-experts
+
+Creating opt-out policies for students
+
+Publishing impact reports or audit summaries
+
+Ensuring transparency about what data is used and how
+
+Summary Judgement
+
+Responsibility for building and training the model lies with technical staff.
+Accountability for its use and impact should rest with senior leadership (e.g., Director of Student Success or equivalent).
+A lack of clear oversight or appeal mechanisms would undermine both student trust and system credibility.
+
+
+Ex 4: 
+
+| **Intervention Design** | **Classification** | **Reason** |
+|--------------------------|---------------------|------------|
+| Pop-up Alert | Ethical Nudge | A timely, actionable message that gives the student agency. It informs without pressure. |
+| Progress Bar | Borderline / Context-dependent | Could be ethical if used to motivate and inform. But if colors like red/green trigger anxiety or shame, it risks coercion. Depends on tone and framing. |
+| Default Booking | Manipulative | Automatically scheduling appointments without explicit consent reduces agency. This is a classic "default effect" used coercively. |
+| Peer Ranking | Manipulative | Public or comparative rankings may induce social pressure, shame, or competition—especially in vulnerable students. Risks outweigh benefits. |
+| Motivational Quote | Ethical Nudge | Harmless and unobtrusive. A light motivational nudge that encourages action without manipulating. |

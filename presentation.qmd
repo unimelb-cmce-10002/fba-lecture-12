@@ -1,7 +1,9 @@
 ---
-title: "Presentation"
-author: "Lachlan Deer"
-institute: "Somewhere"
+title: "Ethics in Business Analytics"
+author: "Foundations of Business Analytics"
+institute: "CMCE-10002, University of Melbourne"
+date: today
+date-format: long
 format: 
   beamer: 
     aspectratio: 32
@@ -9,34 +11,209 @@ format:
     theme: mousteau
 ---
 
-# In the morning
+## What Is Ethics in Business Analytics?
 
-## Getting up
+- Analytics projects don't just answer technical questions — they shape real-world outcomes.
+- Ethics means asking:  
 
-- Turn off alarm
-- Get out of bed
+>**Are we doing good things with data — and doing them well?**
 
-## Breakfast
+## Four Ethical Lenses
 
-- Eat eggs
-- Drink coffee
+We'll explore four lenses that help evaluate data-driven solutions to business problems:
 
-# In the evening
+1. **Privacy**  
+   *Is the data we're collecting respectful and proportionate?*
 
-## Dinner
+2. **Bias**  
+   *Does our model work fairly across different groups?*
 
-- Eat spaghetti
-- Drink wine
+3. **Accountability**  
+   *Can decisions be explained and challenged?*
 
-## Going to sleep
+4. **Power**  
+   *Who benefits? Who bears risk? Who has a voice?*
 
-- Get in bed
-- Count sheep
+## The LearnLoop Case
 
-# Before I Sleep
+We work at a company building LearnLoop — a learning analytics platform.
 
-## I write equations
+> A new feature, the Early Warning System, aims to identify students at risk of failing and notify academic advisors early.
 
-$$
-y = x \beta + \varepsilon
-$$
+Today, **we’ll be the analyst team**.
+
+We'll evaluate this system through each of the four ethical lenses — and decide whether it’s fair, explainable, and fit for purpose.
+
+# Lens 1: Privacy
+
+## What does privacy mean in business analytics?
+
+- It's not just about secrecy — it's about **control**.
+- Are students aware of what data is being collected?  
+- Is the data **necessary**, or just “nice to have”?
+- Could this data be used to infer sensitive traits (e.g. mental health)?
+
+Privacy risks often arise when:
+
+- Data is reused for unintended purposes  
+- Sensitive inferences are made without consent  
+- Systems gather more than they need  
+
+## Exercise: Data Inventory Challenge 
+
+You've been asked to think what data to include in the LearnLoop Early Warning System by linking the model to university datasets.
+
+* For each dataset or variable on the next slid
+
+1. Classify it as:  **Essential**, **Nice to have**, or **Unnecessary**.
+2. Whether we should ask for student consent to include the data source
+
+**Provide reasons fo each variable you chose to exclude.**
+
+## Exercise: Data Inventory Challenge
+
+| Data Source                 | Variables                              |
+|-----------------------------|----------------------------------------|
+| LMS activity logs           | Logins, page views, submission timing  |
+| Assessment results          | Grades, late penalties                 |
+| Demographics                | Age, gender, visa status               |
+| Library usage               | Swipe-ins, book loans                  |
+| Support service visits      | Counseling sessions, academic support  |
+| Financial data              | Fees owed, scholarships, payments      |
+| Wi-Fi / location tracking   | On-campus presence, study patterns     |
+| Commute time                | Postcode, estimated travel distance    |
+| Devices / browsers used     | Device type, OS, screen resolution     |
+| Past interventions          | Emails sent, prior flags               |
+| Course evaluations          | Feedback submitted by student          |
+
+## Solution: Data Inventory Challenge
+
+# Lens 2: Bias
+
+## Fairness in Analytics
+
+Even if data is collected ethically, it can still lead to **unfair outcomes**.
+
+Bias happens when predictions are systematically worse—or more harmful—for certain groups. In LearnLoop, for example, the model might flag fewer part-time students as “at risk,” not because they are fine, but because they’re underrepresented in the training data.
+
+Bias can creep in from:
+
+- **Data**: Some groups are missing or underrepresented.
+- **Variables**: Features proxy for race, class, gender.
+- **Labels**: Outcome variable reflects past inequalities.
+- **Drift**: Fairness decays over time if not monitored.
+
+## Exercise: Bias Audit of LearnLoop
+
+**Work through this Bias Audit Workflow:**
+
+1. **Define the decision**  
+   What does the model do? Who is affected?
+
+2. **Identify relevant groups**  
+   Which students might be disadvantaged or overlooked?
+
+3. **Choose a fairness metric**  
+   Group parity? Equalised odds? Calibration?
+
+4. **Slice performance by group**  
+   What errors or disparities might emerge?
+
+5. **Flag gaps and trade-offs**  
+   Where could bias sneak in? How would you know?
+
+6. **Propose mitigation and monitoring**  
+   What can you do to reduce harm?
+
+## Solution: Bias Audit of LearnLoop
+
+# Lens 3: Accountability
+
+## Who’s Responsible for Data-Driven Decisions?
+
+A model can be accurate and fair — but still feel unaccountable.
+
+In business analytics, **accountability** means knowing:
+
+- Who is **responsible** for how a system was designed?
+- Who is **accountable** for what the system decides?
+- Can users understand and **contest** those decisions?
+
+Without clear ownership, explanations, and oversight, even a well-meaning system can harm trust and lead to unfair outcomes.
+
+## Exercise: Who’s in Charge?
+
+A student is flagged as “at risk” by LearnLoop’s Early Warning System. The student disagrees. What happens next?
+
+Use these prompts to guide your discussion:
+
+1. **Ownership**: Who trained the model? Who approved its deployment?
+
+2. **Process**: Is there a way for students to challenge a flag? Who reviews it?
+
+3. **Oversight**: How is the system monitored and updated over time?
+
+4. **Communication**: Could the prediction be explained clearly to the student?
+
+5. **Trust**: What could be done to improve transparency?
+
+## Solution: Who’s in Charge?
+
+# Lens 4: Power
+
+##  Ethical Lens: Power Dynamics in Analytics
+
+- Business analytics doesn’t just predict behaviour—it can shape it.
+- Systems that collect and act on data can reinforce power imbalances between institutions and individuals.
+- Power risks include:
+  - **Manipulation**: nudging or coercing users toward actions they didn’t intend.
+  - **Surveillance**: using data to monitor or discipline users in ways they can’t challenge.
+  - **Voice and agency**: systems that make decisions without input from the people affected.
+
+## Exercise: Nudges vs Manipulation in LearnLoop
+
+The LearnLoop team wants to encourage students flagged by the Early Warning System to take action. They're testing the following interface options:
+
+\small
+\begin{tabular}{|p{3.5cm}|p{7.5cm}|}
+\hline
+\textbf{Intervention Design} & \textbf{Description} \\
+\hline
+Pop-up Alert & A modal appears after login: "You are at risk of falling behind. Click here to schedule a meeting with your advisor." \\
+\hline
+Progress Bar & A red progress bar shows "Likelihood of course success: 42\%." It turns green only if key tasks are completed. \\
+\hline
+Default Booking & Automatically schedules a check-in with support staff. Students must actively opt out. \\
+\hline
+Peer Ranking & Shows how many students in the class are ahead or behind you. \\
+\hline
+Motivational Quote & "Your future depends on what you do today" shown after each login. \\
+\hline
+\end{tabular}
+
+## Exercise: Nudges vs Manipulation in LearnLoop
+
+1. Which of these are nudges (gentle prompts)? Which feel more coercive or manipulative?
+2. What makes a design cross the line from persuasive to unethical?
+3. How might different students (e.g. first-gen, anxious, or neurodivergent students) experience these differently?
+4. What alternatives could help support student action while respecting autonomy?
+5. How could LearnLoop evaluate the impact and acceptability of these designs before deployment?
+
+**Bonus**: Try re-designing one of the examples to reduce manipulation risk while preserving effectiveness.
+
+## Solution: Nudges vs Manipulation in LearnLoop
+
+
+## Wrapping Up: Ethics in Business Analytics
+
+| Lens        | Key Question                              | LearnLoop Focus                             |
+|-------------|--------------------------------------------|----------------------------------------------|
+| **Privacy** | Are we collecting and using data respectfully? | Login logs, grades, and support records—how much is too much? |
+| **Bias**    | Is the system fair for all students?         | Do prediction errors affect some groups more than others? |
+| **Accountability** | Who is responsible, and is the system explainable? | Can students contest a flag? Who owns the final call? |
+| **Power**   | How does this system shape choices or influence? | Are nudges helpful, or manipulative? Who benefits from the system's design? |
+
+**Takeaway:**  
+Ethical business analytics requires more than technical skill.  
+It means asking: _Who is affected?_ _What are the risks?_ _And how can we do better?_
+
