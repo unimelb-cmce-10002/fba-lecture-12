@@ -355,13 +355,14 @@ To frame better questions and extract meaning from analysis, we need to understa
 - competitors
 - suppliers
 - regulations
-- industry norms
 - how the organisation works
+
+\vspace{1cm}
 
 Where we applied this:
 
-- T2: Uber as a two-sided platform
-- T4: properties of accounting measures
+- T1: Uber as a two-sided platform
+- T4: Properties of accounting measures
 
 :::
 
@@ -379,26 +380,27 @@ Where we applied this:
 
 ::: {.column width="49%"}
 
-The data we want rarely exists in the form we need.
-
-We often need to collect, clean, or reshape data from:
+Because the data we want rarely exists in the form we need, we often need to collect, clean, or reshape data from:
 
 - spreadsheets
 - databases
-- websites
 - APIs
 - messy or incomplete sources
 
+\vspace{1cm}
+
 Where we applied this:
 
-- T8: APIs and web scraping
-- T6: JSON and bid data
+- T10: JSON and bid data
+- T11: API and macro indicators
 
 :::
 
 ::: {.column width="47%"}
 
-![](recap-assets/recap-05.png){width=100%}
+\vspace{1cm}
+
+![](recap-assets/fred.jpg){width=100%}
 
 :::
 
@@ -415,18 +417,23 @@ To explain and predict how people and firms behave, we need to think about:
 - motivations
 - incentives
 - constraints
-- strategic behaviour
+
+\vspace{0.5cm}
 
 Business theory gives us mental models for proposing and interpreting patterns in data.
 
+\vspace{1cm}
+
 Where we applied this:
 
-- T6: shill bidding strategies
 - L5: mining and risk
+- T10: Shill bidding strategies
 
 :::
 
 ::: {.column width="47%"}
+
+\vspace{0.5cm}
 
 ![](recap-assets/recap-06.png){width=100%}
 
@@ -440,19 +447,19 @@ Where we applied this:
 
 ::: {.column width="49%"}
 
-To produce useful analysis, match the tool to the task.
-
-Ask:
+To produce useful analysis, match the tool to the task. Ask:
 
 - Do we need a causal estimate?
 - Do we need a prediction?
 - Do we need a simple, effective plot?
 - Does the tool need to be interpretable?
 
+\vspace{1cm}
+
 Where we applied this:
 
-- T9: k-means clustering in HRM
-- T10: A/B testing in tech
+- T7: k-means clustering in HRM
+- T8: A/B testing in tech
 
 :::
 
@@ -470,9 +477,7 @@ Where we applied this:
 
 ::: {.column width="49%"}
 
-Misleading analysis leads to bad decisions.
-
-We need to think critically about what the data really shows:
+Misleading analysis leads to bad decisions. We need to think critically about what the data really shows:
 
 - measurement
 - sampling
@@ -480,10 +485,12 @@ We need to think critically about what the data really shows:
 - assumptions
 - overfitting
 
+\vspace{0.5cm}
+
 Where we applied this:
 
-- L10: model-based inference
-- T11: overfitting
+- L9: Model-based inference
+- T9: Overfitting
 
 :::
 
@@ -510,6 +517,8 @@ Good computational practice makes analysis:
 - more reproducible
 - easier to debug
 
+\vspace{1cm}
+
 Where we applied this:
 
 - L5: data wrangling
@@ -535,17 +544,16 @@ To help decision makers act, we shape findings into clear, purposeful stories.
 
 Good communication uses:
 
-- graphs
-- slides
-- writing
+- clear writing
 - clean visuals
-- clear structure
 - sharp recommendations
+
+\vspace{1cm}
 
 Where we applied this:
 
 - T3: data visualisation
-- Assignments 1 and 2
+- Assignment 
 
 :::
 
@@ -563,23 +571,25 @@ Where we applied this:
 
 ::: {.column width="49%"}
 
-You will not always get a clean brief.
-
-Business analysts need to act as curious, focused investigators:
+Because you will not always get a clean brief, business analysts need to act as curious, focused investigators:
 
 - reframe vague problems
 - find workable solutions
 - focus on what matters
 - know when analysis is good enough to support action
 
+\vspace{1cm}
+
 Where we applied this:
 
-- L10: customer segmentation
-- Assignments 1 and 2
+- T6: Using variation in data to tell stories
+- L10: Customer segmentation
 
 :::
 
 ::: {.column width="47%"}
+
+\vspace{1cm}
 
 ![](recap-assets/recap-11.png){width=100%}
 
@@ -591,18 +601,18 @@ Where we applied this:
 
 **Weeks 1-5**
 
-1. Foundations  
+1. **Foundations**
    Business analytics, business scientist skills, reproducible workflows
 
-2. Extracting first insights  
+2. **Extracting first insights** 
    Data visualisation, manipulating data, shaping and combining data
 
 **Weeks 6-12**
 
-3. Finding and storing data  
-   Storing, using, and collecting data
-
-4. Extracting deeper insights  
+3. **Extracting deeper insights**  
    Variation, descriptive analytics, causal analytics, predictive analytics
 
-5. Ethics and privacy
+4. **Finding and storing data**  
+   Storing, using, and collecting data
+
+5. **Ethics and privacy**
