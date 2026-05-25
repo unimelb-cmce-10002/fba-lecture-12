@@ -13,6 +13,10 @@ format:
 
 ## What Is Ethics in Business Analytics?
 
+> **Ethics asks whether analytics is being used in ways that are respectful, fair, accountable, and proportionate.**
+
+\vspace{0.5cm}
+
 Analytics projects do not just describe the world.
 
 They can shape:
@@ -20,9 +24,7 @@ They can shape:
 - what organisations notice
 - who receives opportunities
 - who bears risk
-- what choices people are encouraged to make
-
-> **Ethics asks whether analytics is being used in ways that are respectful, fair, accountable, and proportionate.**
+- what choices people get to make
 
 ## A Simple Definition
 
@@ -32,7 +34,7 @@ In business analytics, ethics means asking:
 - Should we use it for this purpose?
 - Could this harm people?
 - Who gets to challenge the outcome?
-- Are we comfortable defending this decision?
+- **Are we comfortable defending this decision?**
 
 The goal is not perfect answers.  
 The goal is better questions before harm occurs.
@@ -73,6 +75,8 @@ Facebook data was accessed through a third-party app and later used for politica
 
 Key ethical issue:
 
+\vspace{0.25cm}
+
 > People may have shared data for one purpose, but not expected it to be reused for political analytics.
 
 Lesson: consent is weak if people cannot understand the future use.
@@ -87,7 +91,7 @@ What would you ask before approving the project?
 
 ## Bias Is Systematic Harm
 
-Bias is not just an offensive variable in a dataset.
+We care about bias beyond the statistical sense...
 
 It can appear when an analytics system produces systematically worse outcomes for some groups.
 
@@ -106,6 +110,8 @@ Reuters reported that Amazon abandoned an experimental AI recruiting tool after 
 The tool was trained on historical hiring data from a male-dominated workforce.
 
 Key ethical issue:
+
+\vspace{0.25cm}
 
 > A model trained on past decisions can learn past exclusion and make it look objective.
 
@@ -149,6 +155,8 @@ Australia's Robodebt scheme used automated income averaging to raise welfare deb
 The Royal Commission described the scheme as a costly failure of public administration in both human and economic terms.
 
 Key ethical issue:
+
+\vspace{0.25cm}
 
 > Automation scaled decisions that people affected by them struggled to understand, challenge, or correct.
 
@@ -196,6 +204,8 @@ The FTC alleged that Fortnite used dark patterns that led players, including chi
 
 Key ethical issue:
 
+\vspace{0.25cm}
+
 > Interface design can convert attention, confusion, and impulse into revenue.
 
 Lesson: design choices can be ethical choices.
@@ -229,17 +239,8 @@ Unethical analytics can produce:
 - direct harm to people
 
 **Takeaway:**  
-The question is not only "Can we predict this?"  
+The question is not only "Can we model/describe/predict this?"  
 It is also "Should we act on it, and under what conditions?"
-
-## Sources
-
-\small
-
-- FTC, Facebook privacy settlement, 2019: `ftc.gov`
-- Reuters, Amazon recruiting tool reporting, 2018
-- Royal Commission into the Robodebt Scheme, 2023
-- FTC, Epic Games/Fortnite order, 2023
 
 # Appendix: Discussion Notes
 
@@ -380,7 +381,7 @@ Where we applied this:
 
 ::: {.column width="49%"}
 
-Because the data we want rarely exists in the form we need, we often need to collect, clean, or reshape data from:
+Because the data we want rarely exists in the form we need, we must collect, clean, or reshape data from:
 
 - spreadsheets
 - databases
@@ -452,7 +453,7 @@ To produce useful analysis, match the tool to the task. Ask:
 - Do we need a causal estimate?
 - Do we need a prediction?
 - Do we need a simple, effective plot?
-- Does the tool need to be interpretable?
+- Does the tool need to be easily interpretable?
 
 \vspace{1cm}
 
