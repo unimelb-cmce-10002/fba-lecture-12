@@ -13,207 +13,607 @@ format:
 
 ## What Is Ethics in Business Analytics?
 
-- Analytics projects don't just answer technical questions — they shape real-world outcomes.
-- Ethics means asking:  
+> **Ethics asks whether analytics is being used in ways that are respectful, fair, accountable, and proportionate.**
 
->**Are we doing good things with data — and doing them well?**
+\vspace{0.5cm}
+
+Analytics projects do not just describe the world.
+
+They can shape:
+
+- what organisations notice
+- who receives opportunities
+- who bears risk
+- what choices people get to make
+
+## A Simple Definition
+
+In business analytics, ethics means asking:
+
+- Should we collect this data?
+- Should we use it for this purpose?
+- Could this harm people?
+- Who gets to challenge the outcome?
+- **Are we comfortable defending this decision?**
+
+The goal is not perfect answers.  
+The goal is better questions before harm occurs.
 
 ## Four Ethical Lenses
 
-We'll explore four lenses that help evaluate data-driven solutions to business problems:
+We will use four lenses:
 
 1. **Privacy**  
-   *Is the data we're collecting respectful and proportionate?*
+   Are we using data respectfully?
 
 2. **Bias**  
-   *Does our model work fairly across different groups?*
+   Are outcomes unfair for some groups?
 
 3. **Accountability**  
-   *Can decisions be explained and challenged?*
+   Can decisions be explained and challenged?
 
 4. **Power**  
-   *Who benefits? Who bears risk? Who has a voice?*
-
-## The LearnLoop Case
-
-We work at a company building LearnLoop — a learning analytics platform.
-
-> A new feature, the Early Warning System, aims to identify students at risk of failing and notify academic advisors early.
-
-Today, **we’ll be the analyst team**.
-
-We'll evaluate this system through each of the four ethical lenses — and decide whether it’s fair, explainable, and fit for purpose.
+   Who benefits, who bears risk, and who has agency?
 
 # Lens 1: Privacy
 
-## What does privacy mean in business analytics?
+## Privacy Is Not Just Secrecy
 
-- It's not just about secrecy — it's about **control**.
-- Are students aware of what data is being collected?  
-- Is the data **necessary**, or just “nice to have”?
-- Could this data be used to infer sensitive traits (e.g. mental health)?
+Privacy is about control, context, and proportionality.
 
-Privacy risks often arise when:
+Ask:
 
-- Data is reused for unintended purposes  
-- Sensitive inferences are made without consent  
-- Systems gather more than they need  
+- What data is actually needed?
+- Do people understand how it will be used?
+- Could the data reveal something sensitive?
+- Is the use reasonable in context?
+- Can the organisation protect it?
 
-## Exercise: Data Inventory Challenge 
+## Privacy Example: Facebook and Cambridge Analytica
 
-You've been asked to think what data to include in the LearnLoop Early Warning System by linking the model to university datasets.
+Facebook data was accessed through a third-party app and later used for political profiling and targeting.
 
-* For each dataset or variable on the next slid
+Key ethical issue:
 
-1. Classify it as:  **Essential**, **Nice to have**, or **Unnecessary**.
-2. Whether we should ask for student consent to include the data source
+\vspace{0.25cm}
 
-**Provide reasons fo each variable you chose to exclude.**
+> People may have shared data for one purpose, but not expected it to be reused for political analytics.
 
-## Exercise: Data Inventory Challenge
+Lesson: consent is weak if people cannot understand the future use.
 
-| Data Source                 | Variables                              |
-|-----------------------------|----------------------------------------|
-| LMS activity logs           | Logins, page views, submission timing  |
-| Assessment results          | Grades, late penalties                 |
-| Demographics                | Age, gender, visa status               |
-| Library usage               | Swipe-ins, book loans                  |
-| Support service visits      | Counseling sessions, academic support  |
-| Financial data              | Fees owed, scholarships, payments      |
-| Wi-Fi / location tracking   | On-campus presence, study patterns     |
-| Commute time                | Postcode, estimated travel distance    |
-| Devices / browsers used     | Device type, OS, screen resolution     |
-| Past interventions          | Emails sent, prior flags               |
-| Course evaluations          | Feedback submitted by student          |
+## Privacy Discussion
 
-## Solution: Data Inventory Challenge
+Imagine a retailer wants to combine loyalty card, location, and web browsing data.
+
+What would you ask before approving the project?
 
 # Lens 2: Bias
 
-## Fairness in Analytics
+## Bias Is Systematic Harm
 
-Even if data is collected ethically, it can still lead to **unfair outcomes**.
+We care about bias beyond the statistical sense...
 
-Bias happens when predictions are systematically worse—or more harmful—for certain groups. In LearnLoop, for example, the model might flag fewer part-time students as “at risk,” not because they are fine, but because they’re underrepresented in the training data.
+It can appear when an analytics system produces systematically worse outcomes for some groups.
 
-Bias can creep in from:
+Bias can come from:
 
-- **Data**: Some groups are missing or underrepresented.
-- **Variables**: Features proxy for race, class, gender.
-- **Labels**: Outcome variable reflects past inequalities.
-- **Drift**: Fairness decays over time if not monitored.
+- historical data
+- proxy variables
+- underrepresentation
+- biased labels
+- feedback loops
 
-## Exercise: Bias Audit of LearnLoop
+## Bias Example: Amazon Recruiting Tool
 
-**Work through this Bias Audit Workflow:**
+Reuters reported that Amazon abandoned an experimental AI recruiting tool after it learned patterns that disadvantaged women.
 
-1. **Define the decision**  
-   What does the model do? Who is affected?
+The tool was trained on historical hiring data from a male-dominated workforce.
 
-2. **Identify relevant groups**  
-   Which students might be disadvantaged or overlooked?
+Key ethical issue:
 
-3. **Choose a fairness metric**  
-   Group parity? Equalised odds? Calibration?
+\vspace{0.25cm}
 
-4. **Slice performance by group**  
-   What errors or disparities might emerge?
+> A model trained on past decisions can learn past exclusion and make it look objective.
 
-5. **Flag gaps and trade-offs**  
-   Where could bias sneak in? How would you know?
+Lesson: "data-driven" does not automatically mean fair.
 
-6. **Propose mitigation and monitoring**  
-   What can you do to reduce harm?
+## Basic Bias Check
 
-## Solution: Bias Audit of LearnLoop
+Before using a model, ask:
+
+1. Who could be wrongly included?
+2. Who could be wrongly excluded?
+3. Are errors worse for some groups?
+4. Are we using variables that proxy for protected characteristics?
+5. Will we keep monitoring after launch?
+
+## Bias Discussion
+
+A bank uses an algorithm to approve personal loans.
+
+What groups might be affected unfairly, and what errors would matter most?
 
 # Lens 3: Accountability
 
-## Who’s Responsible for Data-Driven Decisions?
+## Accountability Means Answerability
 
-A model can be accurate and fair — but still feel unaccountable.
+A system is accountable when people can answer:
 
-In business analytics, **accountability** means knowing:
+- Who designed it?
+- Who approved it?
+- Who monitors it?
+- Who can override it?
+- Who can challenge it?
+- Who is responsible when harm occurs?
 
-- Who is **responsible** for how a system was designed?
-- Who is **accountable** for what the system decides?
-- Can users understand and **contest** those decisions?
+Accuracy does not remove the need for accountability.
 
-Without clear ownership, explanations, and oversight, even a well-meaning system can harm trust and lead to unfair outcomes.
+## Accountability Example: Robodebt
 
-## Exercise: Who’s in Charge?
+Australia's Robodebt scheme used automated income averaging to raise welfare debts.
 
-A student is flagged as “at risk” by LearnLoop’s Early Warning System. The student disagrees. What happens next?
+The Royal Commission described the scheme as a costly failure of public administration in both human and economic terms.
 
-Use these prompts to guide your discussion:
+Key ethical issue:
 
-1. **Ownership**: Who trained the model? Who approved its deployment?
+\vspace{0.25cm}
 
-2. **Process**: Is there a way for students to challenge a flag? Who reviews it?
+> Automation scaled decisions that people affected by them struggled to understand, challenge, or correct.
 
-3. **Oversight**: How is the system monitored and updated over time?
+Lesson: a system is not accountable if affected people cannot understand or dispute it.
 
-4. **Communication**: Could the prediction be explained clearly to the student?
+## Accountability Checklist
 
-5. **Trust**: What could be done to improve transparency?
+Ask:
 
-## Solution: Who’s in Charge?
+- Is there a named owner?
+- Is there a real appeal path?
+- Can a human override the system?
+- Are errors reviewed?
+- Would we know if the system started causing harm?
+
+## Accountability Discussion
+
+An insurer automatically rejects some claims as suspicious.
+
+What should customers be told, and how should they challenge a decision?
 
 # Lens 4: Power
 
-##  Ethical Lens: Power Dynamics in Analytics
+## Analytics Changes Power Relationships
 
-- Business analytics doesn’t just predict behaviour—it can shape it.
-- Systems that collect and act on data can reinforce power imbalances between institutions and individuals.
-- Power risks include:
-  - **Manipulation**: nudging or coercing users toward actions they didn’t intend.
-  - **Surveillance**: using data to monitor or discipline users in ways they can’t challenge.
-  - **Voice and agency**: systems that make decisions without input from the people affected.
+Analytics systems do more than predict behaviour.
 
-## Exercise: Nudges vs Manipulation in LearnLoop
+They can shape behaviour.
 
-The LearnLoop team wants to encourage students flagged by the Early Warning System to take action. They're testing the following interface options:
+They can:
 
-\small
-\begin{tabular}{|p{3.5cm}|p{7.5cm}|}
-\hline
-\textbf{Intervention Design} & \textbf{Description} \\
-\hline
-Pop-up Alert & A modal appears after login: "You are at risk of falling behind. Click here to schedule a meeting with your advisor." \\
-\hline
-Progress Bar & A red progress bar shows "Likelihood of course success: 42\%." It turns green only if key tasks are completed. \\
-\hline
-Default Booking & Automatically schedules a check-in with support staff. Students must actively opt out. \\
-\hline
-Peer Ranking & Shows how many students in the class are ahead or behind you. \\
-\hline
-Motivational Quote & "Your future depends on what you do today" shown after each login. \\
-\hline
-\end{tabular}
+- surveil people
+- steer choices
+- set defaults
+- make some options easier than others
+- make refusal difficult
 
-## Exercise: Nudges vs Manipulation in LearnLoop
+Power is about who gets to decide the terms of the system.
 
-1. Which of these are nudges (gentle prompts)? Which feel more coercive or manipulative?
-2. What makes a design cross the line from persuasive to unethical?
-3. How might different students (e.g. first-gen, anxious, or neurodivergent students) experience these differently?
-4. What alternatives could help support student action while respecting autonomy?
-5. How could LearnLoop evaluate the impact and acceptability of these designs before deployment?
+## Power Example: Fortnite Dark Patterns
 
-**Bonus**: Try re-designing one of the examples to reduce manipulation risk while preserving effectiveness.
+The FTC finalised an order requiring Epic Games to pay $245 million to consumers.
 
-## Solution: Nudges vs Manipulation in LearnLoop
+The FTC alleged that Fortnite used dark patterns that led players, including children, into unwanted purchases.
 
+Key ethical issue:
 
-## Wrapping Up: Ethics in Business Analytics
+\vspace{0.25cm}
 
-| Lens        | Key Question                              | LearnLoop Focus                             |
-|-------------|--------------------------------------------|----------------------------------------------|
-| **Privacy** | Are we collecting and using data respectfully? | Login logs, grades, and support records—how much is too much? |
-| **Bias**    | Is the system fair for all students?         | Do prediction errors affect some groups more than others? |
-| **Accountability** | Who is responsible, and is the system explainable? | Can students contest a flag? Who owns the final call? |
-| **Power**   | How does this system shape choices or influence? | Are nudges helpful, or manipulative? Who benefits from the system's design? |
+> Interface design can convert attention, confusion, and impulse into revenue.
+
+Lesson: design choices can be ethical choices.
+
+## Nudge or Manipulation?
+
+A nudge is more ethical when it is:
+
+- transparent
+- easy to refuse
+- aligned with the person's interests
+
+A design becomes manipulative when it exploits vulnerability, hides material information, or makes refusal costly.
+
+## Power Discussion
+
+Think about subscription cancellation.
+
+Where is the line between encouraging customers to stay and trapping them?
+
+## Wrapping Up
+
+Ethics in business analytics is not separate from business performance.
+
+Unethical analytics can produce:
+
+- legal exposure
+- reputational damage
+- bad decisions
+- loss of trust
+- direct harm to people
 
 **Takeaway:**  
-Ethical business analytics requires more than technical skill.  
-It means asking: _Who is affected?_ _What are the risks?_ _And how can we do better?_
+The question is not only "Can we model/describe/predict this?"  
+It is also "Should we act on it, and under what conditions?"
 
+# Appendix: Discussion Notes
+
+## Privacy Discussion: Suggested Points
+
+Retailer combining loyalty, location, and web browsing data:
+
+- Is each data source necessary for the business purpose?
+- Would customers expect these data sources to be combined?
+- Does location reveal sensitive places or routines?
+- Can customers opt out without losing the core service?
+- How long is the combined profile kept?
+
+## Bias Discussion: Suggested Points
+
+Bank loan approval algorithm:
+
+- Groups affected may include younger applicants, migrants, renters, carers, and people with thin credit files.
+- False rejections matter because they deny access to credit.
+- False approvals matter because they can create unaffordable debt.
+- Check error rates across groups, not just overall accuracy.
+- Watch for proxies such as postcode, employment gaps, or transaction patterns.
+
+## Accountability Discussion: Suggested Points
+
+Insurer automatically rejecting suspicious claims:
+
+- Customers should be told the reason in plain language.
+- They should know whether automation was used.
+- There should be a clear appeal path with human review.
+- The insurer should track overturned decisions.
+- A named team should own monitoring and correction.
+
+## Power Discussion: Suggested Points
+
+Subscription cancellation:
+
+- Ethical retention is transparent and easy to refuse.
+- It is reasonable to show one clear alternative or discount.
+- It becomes trapping when cancellation is hidden, delayed, or requires unnecessary contact.
+- The exit path should be no harder than sign-up.
+- Vulnerable users should not be pressured through fear, guilt, or confusion.
+
+# Subject Recap
+
+## What Is Business Analytics?
+
+All firms face the question: **What should we do next?**
+
+- Hold more inventory or less going forward?
+- Redesign our recruitment process?
+- Change suppliers?
+- Raise capital via an IPO?
+- Increase product prices?
+- Launch a new advertising campaign?
+- Roster more or fewer staff?
+
+**Business analytics** is the use of data and analytical tools to support better decision-making.
+
+## The Business Analytics Process
+
+1. **Define the problem**  
+   What decision needs to be made? What does success look like?
+
+2. **Collect and clean data**  
+   Gather relevant data and make it accurate, complete, and reliable.
+
+3. **Analyse data appropriately**  
+   Identify patterns, test hypotheses, and quantify trade-offs.
+
+4. **Communicate insights**  
+   Tell clear stories with data that guide action.
+
+5. **Act to create value**  
+   Use insight to improve strategy and operations.
+
+## The Business Scientist Mindset
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+To implement this process, a business scientist needs:
+
+1. **Statistical reasoning**  
+   Separate signal from noise, check assumptions, and quantify uncertainty.
+
+2. **Technological capability**  
+   Get, store, shape, and analyse data reliably and reproducibly.
+
+3. **Business insight**  
+   Translate analysis into meaningful understanding about customers, operations, and strategy.
+
+:::
+
+::: {.column width="46%"}
+
+![](recap-assets/recap-03.jpg){width=100%}
+
+:::
+
+::::
+
+## Institutional Detail
+
+:::: {.columns}
+
+::: {.column width="49%"}
+
+To frame better questions and extract meaning from analysis, we need to understand the business world:
+
+- customers
+- competitors
+- suppliers
+- regulations
+- how the organisation works
+
+\vspace{1cm}
+
+Where we applied this:
+
+- T1: Uber as a two-sided platform
+- T4: Properties of accounting measures
+
+:::
+
+::: {.column width="47%"}
+
+![](recap-assets/recap-04.png){width=100%}
+
+:::
+
+::::
+
+## Data Discovery
+
+:::: {.columns}
+
+::: {.column width="49%"}
+
+Because the data we want rarely exists in the form we need, we must collect, clean, or reshape data from:
+
+- spreadsheets
+- databases
+- APIs
+- messy or incomplete sources
+
+\vspace{1cm}
+
+Where we applied this:
+
+- T10: JSON and bid data
+- T11: API and macro indicators
+
+:::
+
+::: {.column width="47%"}
+
+\vspace{1cm}
+
+![](recap-assets/fred.jpg){width=100%}
+
+:::
+
+::::
+
+## Business Theory
+
+:::: {.columns}
+
+::: {.column width="49%"}
+
+To explain and predict how people and firms behave, we need to think about:
+
+- motivations
+- incentives
+- constraints
+
+\vspace{0.5cm}
+
+Business theory gives us mental models for proposing and interpreting patterns in data.
+
+\vspace{1cm}
+
+Where we applied this:
+
+- L5: mining and risk
+- T10: Shill bidding strategies
+
+:::
+
+::: {.column width="47%"}
+
+\vspace{0.5cm}
+
+![](recap-assets/recap-06.png){width=100%}
+
+:::
+
+::::
+
+## Analytical Modelling
+
+:::: {.columns}
+
+::: {.column width="49%"}
+
+To produce useful analysis, match the tool to the task. Ask:
+
+- Do we need a causal estimate?
+- Do we need a prediction?
+- Do we need a simple, effective plot?
+- Does the tool need to be easily interpretable?
+
+\vspace{1cm}
+
+Where we applied this:
+
+- T7: k-means clustering in HRM
+- T8: A/B testing in tech
+
+:::
+
+::: {.column width="47%"}
+
+![](recap-assets/recap-07.jpg){width=100%}
+
+:::
+
+::::
+
+## Analytical Theory
+
+:::: {.columns}
+
+::: {.column width="49%"}
+
+Misleading analysis leads to bad decisions. We need to think critically about what the data really shows:
+
+- measurement
+- sampling
+- alternative explanations
+- assumptions
+- overfitting
+
+\vspace{0.5cm}
+
+Where we applied this:
+
+- L9: Model-based inference
+- T9: Overfitting
+
+:::
+
+::: {.column width="47%"}
+
+![](recap-assets/recap-08.png){width=100%}
+
+:::
+
+::::
+
+## Computational Skills
+
+:::: {.columns}
+
+::: {.column width="49%"}
+
+To solve data problems efficiently, we use code and robust data workflows.
+
+Good computational practice makes analysis:
+
+- faster
+- clearer
+- more reproducible
+- easier to debug
+
+\vspace{1cm}
+
+Where we applied this:
+
+- L5: data wrangling
+- L6: shaping and combining data
+
+:::
+
+::: {.column width="47%"}
+
+![](recap-assets/recap-09.png){width=100%}
+
+:::
+
+::::
+
+## Presentation and Communication
+
+:::: {.columns}
+
+::: {.column width="49%"}
+
+To help decision makers act, we shape findings into clear, purposeful stories.
+
+Good communication uses:
+
+- clear writing
+- clean visuals
+- sharp recommendations
+
+\vspace{1cm}
+
+Where we applied this:
+
+- T3: data visualisation
+- Assignment 
+
+:::
+
+::: {.column width="47%"}
+
+![](recap-assets/recap-10.png){width=100%}
+
+:::
+
+::::
+
+## Creativity and Judgment
+
+:::: {.columns}
+
+::: {.column width="49%"}
+
+Because you will not always get a clean brief, business analysts need to act as curious, focused investigators:
+
+- reframe vague problems
+- find workable solutions
+- focus on what matters
+- know when analysis is good enough to support action
+
+\vspace{1cm}
+
+Where we applied this:
+
+- T6: Using variation in data to tell stories
+- L10: Customer segmentation
+
+:::
+
+::: {.column width="47%"}
+
+\vspace{1cm}
+
+![](recap-assets/recap-11.png){width=100%}
+
+:::
+
+::::
+
+## What Did We Cover?
+
+**Weeks 1-5**
+
+1. **Foundations**
+   Business analytics, business scientist skills, reproducible workflows
+
+2. **Extracting first insights** 
+   Data visualisation, manipulating data, shaping and combining data
+
+**Weeks 6-12**
+
+3. **Extracting deeper insights**  
+   Variation, descriptive analytics, causal analytics, predictive analytics
+
+4. **Finding and storing data**  
+   Storing, using, and collecting data
+
+5. **Ethics and privacy**
